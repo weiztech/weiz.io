@@ -1,3 +1,4 @@
+
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -22,11 +23,26 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+# Created by https://www.gitignore.io/api/angular
 
+### Angular ###
+## Angular ##
+# compiled output
+/tmp
+/app/**/*.js
+/app/**/*.js.map
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
 # misc
 /.sass-cache
 /connect.lock
 /coverage
+/coverage/*
 /libpeerconnection.log
 npm-debug.log
 testem.log
@@ -36,6 +52,13 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 
+
 # System Files
 .DS_Store
 Thumbs.db
+
+#System Files
+.DS_Store
+
+# End of https://www.gitignore.io/api/angular
+
