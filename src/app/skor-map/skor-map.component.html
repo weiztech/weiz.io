@@ -1,0 +1,36 @@
+<p>
+  Possition ( Lat: {{ position.lat }} ,Lng: {{ position.lng }} ), Radius: {{ radius }} meters.
+</p>
+<input type="number" [(ngModel)]="radius" class="form-control col-sm-3" placeholder="Radius in meters">
+<br/>
+<agm-map [latitude]="lat" [zoom]="14" [longitude]="lng" [disableDefaultUI]="true">
+  <agm-circle
+    [latitude]="position.lat"
+    [fillOpacity]="0.2" [longitude]="position.lng" [radius]="radius"></agm-circle>
+  <agm-marker
+    (markerClick)="clickedMarker()"
+    (dragEnd)="onDragEnd($event)"
+    [latitude]="position.lat"
+    [longitude]="position.lng" [markerDraggable]="true" >
+    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+        My first Snazzy Info Window!
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+
+  <agm-marker
+    (markerClick)="clickedMarker()"
+    [latitude]="lat"
+    [longitude]="106.800" [markerDraggable]="true" >
+    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+        <img
+        style="max-width:100px;"
+        src="https://i0.wp.com/d2leza6sedwevk.cloudfront.net/wp-content/uploads/2017/11/01233544/angular-logo2.png?resize=886%2C668&ssl=1"/>
+        <br/>
+        <h6>Angular 5 Released</h6>
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+</agm-map>
